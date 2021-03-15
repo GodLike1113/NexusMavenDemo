@@ -1,0 +1,6 @@
+如何把Lib工程转成一个本地Maven仓库和一个远程仓库，
+参考地址 https://blog.csdn.net/xmxkf/article/details/80674232
+
+如果无法下载Nexus安装包，可以到百度网盘中下载（狼丿风信子）
+下载安装包地址：（可能需要翻墙）
+https://help.sonatype.com/repomanager2/download/download-archives---repository-manager-oss

@@ -1,0 +1,78 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.3.72"
+    repositories {
+        google()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+        maven {
+            url "http://dev-nexus.palmcash.com/nexus/content/groups/android-public/"
+        }
+        google()
+        mavenCentral()
+//        maven {
+//            url 'https://nexus.transspay.net/repository/maven-snapshots/'
+//        }
+
+//        mavenLocal()
+        maven {
+            url 'https://nexus.transspay.net/repository/postpay-snapshots/'
+            credentials {
+                username 'postpay-dev'
+                password 'ymMjqf7fANvD^v'
+            }
+        }
+
+        //私有服务器仓库地址
+        maven {
+            url 'http://localhost:8081/nexus/content/repositories/releases/'
+        }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.1.1"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
+        maven {
+            url "http://dev-nexus.palmcash.com/nexus/content/groups/android-public/"
+        }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+//        maven {
+//            url 'https://nexus.transspay.net/repository/maven-snapshots/'
+//        }
+
+        maven {
+            url 'https://nexus.transspay.net/repository/postpay-snapshots/'
+            credentials {
+                username 'postpay-dev'
+                password 'ymMjqf7fANvD^v'
+            }
+        }
+
+        //本地Maven仓库地址
+        maven {
+            url 'file://E://postPayDemo//repository'
+        }
+
+        //私有服务器仓库地址
+        maven {
+            url 'http://localhost:8081/nexus/content/repositories/releases/'
+        }
+    }
+
+
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
